@@ -144,7 +144,7 @@ class Alumnos extends Component {
                                  <tr key={alumno.id}>
                                     <th>{alumno.id}</th>
                                     <th>{alumno.nombres}</th>
-                                    <th >{alumno.apellidos}</th>
+                                    <th >{alumno.apellido}</th>
                                     <th >{alumno.direccion}</th>
                                     <th >{alumno.cod_postal}</th>
                                     <th >{alumno.telefono}</th>   
