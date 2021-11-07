@@ -19,15 +19,14 @@ class Alumnos extends Component {
           alumnos:[] ,
           modalEliminarAlumnos: false,
           modalInsertarAlumnos: false,
-          form:{
-            
-            //id: '',
-            //nombres: '',
-            //apellido: '',
-            //direccion: '',
-            //cod_postal:'',
-            //telefono:'',
-            //tipoModal: ''
+          form:{            
+            id: '',
+            nombres: '',
+            apellido: '',
+            direccion: '',
+            cod_postal:'',
+            telefono:'',
+            tipoModal: ''
           }
           
         }
@@ -165,10 +164,6 @@ class Alumnos extends Component {
                 <ModalBody>
                   <div className="form-group">
                    
-                    <label htmlFor="id" >id</label>
-                   {/*  <input className="form-control" type= "text" name= "id" id="id" readOnly onChange={this.handleChange} value ={form?form.id:this.stat.id.length+1} /> */}
-                   <input className="form-control" type= "text" name= "id" id="id" readOnly onChange={this.handleChange} value ={form?form.id: ''} />
-                    <br  />
                     <label htmlFor="nombres" >Nombres</label>
                     <input className="form-control" type= "text" name= "nombres" id= "nombres"onChange={this.handleChange}value ={form?form.nombres: ' '} />
                     <br  />

@@ -161,10 +161,7 @@ peticionPut=()=>{
                 </ModalHeader>          
             <ModalBody>
               <div className="form-group">
-               
-                <label htmlFor="codigo" >Codigo</label>
-                <input className="form-control" type= "text" name= "codigo" id="codigo" readOnly onChange={this.handleChange} value ={form?form.codigo:this.state.materias.length+1} />
-                <br  />
+                
                 <label htmlFor="cantidad_horas" >Cantidad de Horas</label>
                 <input className="form-control" type= "text" name= "cantidad_horas" id= "cantidad_horas"onChange={this.handleChange}value ={form?form.cantidad_horas: ' '} />
                 <br  />
