@@ -21,12 +21,12 @@ class Alumnos extends Component {
           modalInsertarAlumnos: false,
           form:{
             
-            id: '',
-            nombres: '',
-            apellido: '',
-            direccion: '',
-            cod_postal:'',
-            telefono:'',
+            //id: '',
+            //nombres: '',
+            //apellido: '',
+            //direccion: '',
+            //cod_postal:'',
+            //telefono:'',
             //tipoModal: ''
           }
           
