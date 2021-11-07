@@ -1,0 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,400&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(245, 241, 245);
+    font-family: 'Nunito', sans-serif;
+
+}
+
+main {
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+}
