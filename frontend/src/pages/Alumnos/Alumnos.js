@@ -129,7 +129,7 @@ class Alumnos extends Component {
                 <table className="table">
                     <thead className= "thead-dark">
                         <tr>
-                            <th scope="col"><h3>ID</h3></th>
+                            
                             <th scope="col"><h3>Nombres</h3></th>
                             <th scope="col"><h3>Apellido</h3></th>
                             <th scope="col"><h3> Direccion</h3></th>
