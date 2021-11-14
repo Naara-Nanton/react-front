@@ -16,6 +16,8 @@ import ClimaApi from './pages/Clima/Clima';
 
 
 
+
+
 function App() {
 
   return (
@@ -49,6 +51,11 @@ function App() {
          <Route exact path = "/Alumnos" component={Alumnos}  >
         <Alumnos/>
          </Route>
+
+
+
+         
+    
 
      </Switch>
     </div>
