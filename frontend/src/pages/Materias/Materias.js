@@ -6,9 +6,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import {Button, Form, Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
+import {Alert, Button, Form, Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
+import Validaciones from '../Validaciones';
 const url="https://tallerirsoapi.herokuapp.com/taller/materias/";
 const urlPost= "https://tallerirsoapi.herokuapp.com/taller/materias";
+
+
+
+
+
+
+
+
 
 
 class Materias extends Component {
@@ -20,6 +29,7 @@ constructor(props){
       materias:[] ,
       modalEliminar: false,
       modalInsertar: false,
+     
       form:{
         
         codigo: '',
@@ -91,12 +101,17 @@ peticionPost=async()=>{
     
   });
 }
-
+//actualizar.
 peticionPut=()=>{
   axios.put(url+this.state.form.codigo, this.state.form).then(response=>{
     this.modalInsertar();
     this.getMaterias();
-  })
+  }).catch((error)=>{
+    console.log(error);
+  });
+
+
+
 }
 
 
@@ -175,7 +190,7 @@ peticionPut=()=>{
             </ModalBody>
             <ModalFooter>
               {this.state.tipoModal=='insertar'?
-              <button className="btn btn-success"onClick={()=>this.peticionPost()}>
+              <button className="btn btn-success"onClick={()=>this.peticionPost(Validaciones())}>
                  Insertar
                  
                  </button>:<button className="btn btn-success"onClick={()=>this.peticionPut()}> 
@@ -183,6 +198,7 @@ peticionPut=()=>{
                  </button>
                     }
               <button className="btn btn-danger" onClick={()=>this.modalInsertar()} >Cerrar </button>
+
 
 
             </ModalFooter>

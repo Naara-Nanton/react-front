@@ -1,12 +1,9 @@
 import React,{  useState } from 'react';
-import './Login.css';
-import Title from './componentes/Title/Title';
-import Label from './componentes/Label/label';
-import Input from './componentes/Input/Input';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import './Register.css';
 import { useHistory} from 'react-router-dom';
 import ClimaApi from '../Clima/Clima';
+import Axios from 'axios';
+import "bootstrap/dist/css/bootstrap.min.css";
 const url= 'https://irso-tallervi.herokuapp.com/users';
 
 
@@ -14,17 +11,20 @@ const url= 'https://irso-tallervi.herokuapp.com/users';
 
 
 
-
-const Login = () => {
+const Register = () => {
 
     let history = useHistory();
-    history.push('/')
+    history.push('/Register')
 
     const [ user, setUser] = useState ('');
     const [ password, setPassword ] = useState ('');
     const [ passwordError, setPasswordError ] = useState(false);
     const [ isLogin, setIsLogin ] = useState (false);
     const [ hasError, setHasError ] = useState (false);
+
+
+
+
 
     function handleChange (name,value){
         if (name === 'usuario' ){
@@ -99,9 +99,6 @@ const Login = () => {
                     <div className = 'submit-button-container'>
                        <button onClick= {()=>{history.push('/Materias')}}className='submit-button'> Materias </button>                       
                     </div>
-                    <div className = 'submit-button-container'>
-                       <button onClick= {()=>{history.push('/Register')}}className='submit-button'> Cancelar </button>                       
-                    </div>
             </label>
             </div>
             :
@@ -109,28 +106,42 @@ const Login = () => {
            
 
             <div className ='login-content'>
-                   <Title  text= 'LOGIN ADMINISTRADOR IRSO'/>
+                   <Title  text= 'REGISTRO DE ADMINISTRADOR'/>
                    { hasError &&
                    <label className='label-alert'> 
                    Su contraseña o nombre de usuario no existe o es incorrecto.
                        </label>
 
                     }
-                   <Label  text= 'Usuario'/>
-                   <Input
+
+
+                
+                   <Label  text= 'Usuario'/>  
+                   <Input // Registro de Usuario : USER
                     attribute= {{
-                     id: 'usuario',
-                     name: 'usuario',
+                     id: 'user',
+                     name: 'user',
                       type: 'text',
                           placeholder: 'Ingrese su usuario'
+                            } }
+                         handleChange={handleChange}
+                          />
+
+                 <Label  text= 'Nombre'/>
+                   <Input  //Registro de Nombre del usuario
+                    attribute= {{
+                     id: 'name',
+                     name: 'name',
+                      type: 'text',
+                          placeholder: 'Ingrese su nombre'
                             } }
                          handleChange={handleChange}
                           />
                          <Label  text= 'Contraseña'/>
                         <Input
                      attribute= {{
-                     id: 'contraseña',
-                     name: 'contraseña',
+                     id: 'pass',
+                     name: 'pass',
                         type: 'password',
                      placeholder: 'Ingrese su contraseña'
                     }  }
@@ -148,11 +159,11 @@ const Login = () => {
 
                     <div className = 'submit-button-container'>
                        <button onClick= {handleSubmit} className='submit-button' > 
-                        Ingresar
+                       Guargar
                        </button>
                     </div>
                     <div className = 'submit-button-container'>
-                       <button onClick= {()=>{history.push('/Register')}}className='submit-button'>  Registrarse </button>                       
+                       <button onClick= {()=>{history.push('/')}}className='submit-button'>  Volver </button>                       
                     </div>
              </div>
               }
@@ -160,5 +171,81 @@ const Login = () => {
                     
     )
 };
+const Title = ({text}) => {
 
-export default Login;
+    return (
+        <div className='title-container'>
+           <label className='title-label'>{text}</label> 
+        </div>
+    )
+    
+}
+
+const Label = ({ text }) => {
+    return (
+        <div>
+            <label>  {text}   </label> 
+        </div>
+       
+    )
+
+
+}
+const Input = ({attribute, handleChange, param}) => {
+    return (
+          <div>
+            <input
+            id={attribute.id}
+            name={attribute.name}
+            placeholder={attribute.placeholder}
+            type={attribute.type}
+            onChange={(e)=> handleChange(e.target.name,e.target.value) }
+            className={ param  ? 'input-error' : 'regular-style' }
+            />
+        </div>
+    )
+};
+
+
+ /*    class Users extends Component {
+   
+         constructor(props){
+             super(props);
+    
+            this.state={
+             user:[] ,
+         
+          form:{
+            
+            name: '',
+            pass: '',
+            user: ''
+          }
+          
+        }
+        this.getUser= this.getUser.bind(this);
+     
+        peticionPost=async()=>{
+        delete this.state.form.codigo;
+        await axios.post(url,this.state.form)
+        .then(response=>{
+    
+            }).catch((error)=>{
+             console.log(error);
+      
+             });
+             }
+
+             peticionPut=()=>{
+            axios.put(url+this.state.form.user, this.state.form).then(response=>{
+
+            }).catch((error)=>{
+             console.log(error);
+            });
+        }
+    }
+
+
+
+  }  */
+  export default Register;

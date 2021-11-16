@@ -12,7 +12,7 @@ import CreateUser from './pages/CreateUser/CreateUser';
 import Materias from './pages/Materias/Materias';
 import Alumnos from './pages/Alumnos/Alumnos';
 import ClimaApi from './pages/Clima/Clima';
-
+import Register from './pages/Register/Register';
 
 
 
@@ -54,8 +54,13 @@ function App() {
 
 
 
-         
+
+         <Route exact path = "/Register" component={Register}  >
+        <Register/>
+         </Route>
+
     
+
 
      </Switch>
     </div>

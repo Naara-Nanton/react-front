@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'; //ICONOS
 import { useState } from 'react/cjs/react.development';
+const url= 'https://irso-tallervi.herokuapp.com/users';
 
 
 
@@ -13,14 +14,6 @@ import { useState } from 'react/cjs/react.development';
 
 
 const CreateUser = () => {
-
-  /*const [ usuario, cambiarUsuario ] = useState ({campo: '', valido: null });
-  const [ email, cambiarEmail ] = useState ({campo: '', valido: null });
-  const [ telefono, cambiarTelefono ] = useState ({campo: '', valido: null });
-  const [ documento, cambiarDocumento ] = useState ({campo: '', valido: null });
-  const [ password, cambiarPassword ] = useState ({campo: '', valido: null });
-  const [ password2, cambiarPasword2 ] = useState ({campo: '', valido: null });*/
-
 
 
   return(
@@ -30,66 +23,38 @@ const CreateUser = () => {
 
 
    <div>
-    <Label htmlFor= "nombre">Usuario </Label>
+    <Label htmlFor= "user">Usuario </Label>
     <GrupoInput>
-    <Input type= "text" placeholder ="Nombre de Usuario" id="nombre" />
+    <Input type= "text" placeholder ="Nombre de Usuario" id="user" />
  
-    <IconoValidacion  icon= {faCheckCircle}/>
+ 
     </GrupoInput>  
-      <LeyendaError>El nombre de usuario debe ser mas de 6 digitos y debe contener numeros y letras.</LeyendaError>
+  
     </div>
 
     
-    <div>
-     <Label htmlFor= "nombre">Email</Label>
-     <GrupoInput>
-     <Input type= "email" placeholder ="Correo Electronico" id="Email"/>
-     <IconoValidacion  icon= {faCheckCircle}/>
-     </GrupoInput>  
-       <LeyendaError>Mensaje de prueba.</LeyendaError>
-     </div>
+   <div>
+    <Label htmlFor= "name">Nombre </Label>
+    <GrupoInput>
+    <Input type= "text" placeholder ="Nombre " id="name" />
+ 
+    </GrupoInput>  
+  
+    </div>
 
-     <div>
-     <Label htmlFor= "nombre">Telefono </Label>
-     <GrupoInput>
-     <Input type= "text" placeholder ="Telefono" id="Telefono"/>
-     <IconoValidacion  icon= {faCheckCircle}/>
-     </GrupoInput>  
-       <LeyendaError>Mensaje de prueba.</LeyendaError>
-     </div>
+  
+    
 
-     <div>
-     <Label htmlFor= "nombre">Documento </Label>
-     <GrupoInput>
-     <Input type= "text" placeholder ="Documento" id="Documento"/>
-     <IconoValidacion  icon= {faCheckCircle}/>
-     </GrupoInput>  
-       <LeyendaError>Mensaje de prueba.</LeyendaError>
-     </div>
+  
 
 
      <div>
      <Label htmlFor= "nombre">Contraseña </Label>
      <GrupoInput>
      <Input type= "password" placeholder ="Contraseña" id="Contraseña"/>
-     <IconoValidacion  icon= {faCheckCircle}/>
      </GrupoInput>  
-       <LeyendaError>Mensaje de prueba.</LeyendaError>
-     </div>
-
-     <div>
-     <Label htmlFor= "nombre">Repetir Contraseña </Label>
-     <GrupoInput>
-     <Input type= "password" placeholder ="Repetir Contraseña" id="Repetir Contraseña"/>
-     <IconoValidacion  icon= {faCheckCircle}/>
-     </GrupoInput>  
-       <LeyendaError>Mensaje de prueba.</LeyendaError>
-     </div>
      
-
-
-
-
+     </div>
 
      <ContenedorTerminos>
         <Label>
